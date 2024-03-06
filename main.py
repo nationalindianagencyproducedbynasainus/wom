@@ -1,8 +1,23 @@
-from functools import lru_cache
-from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 import pymongo
+import pyrogram
+from pyrogram import Client, filters
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, Message, ChatMember
+import asyncio
+import psutil
+import traceback
+from pyrogram.types import *
+import requests
+import os
+import time
+from datetime import datetime
+import pytz
+import random
 import openai
+import uptime
+import datetime
+import pythonping
+import psutil
+import speedtest
 
 # Importing the coroutine decorator explicitly
 from asyncio import coroutine
