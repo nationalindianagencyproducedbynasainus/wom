@@ -307,7 +307,7 @@ def remove_authorized_user(client, message):
 def list_authorized_users(client, message):
     if message.from_user.username in owners:
         user_list = "\n💠 Verified @".join(allowed_users)
-        app.send_message(message.chat.id, f"💠 𝙻𝚒𝚜𝚝 𝙾𝚏 𝙰𝚕𝚕 𝙰𝚞𝚝𝚑𝚘𝚛𝚒𝚣𝚎𝚍 𝚄𝚜𝚎𝚛𝚜 💠 :\n❄ All Active Users ❄ \n✅ Verified List ✅ \n💠 Verified @{user_list}Tru
+        app.send_message(message.chat.id, f"💠 𝙻𝚒𝚜𝚝 𝙾𝚏 𝙰𝚕𝚕 𝙰𝚞𝚝𝚑𝚘𝚛𝚒𝚣𝚎𝚍 𝚄𝚜𝚎𝚛𝚜 💠 :\n❄ All Active Users ❄ \n✅ Verified List ✅ \n💠 Verified @{user_list}Tru") 
         
 print(f"Dark Worm Gpt Bot Is Active Now ✅")      
 app.run()
