@@ -1,17 +1,13 @@
-import pymongo
-import pyrogram
-from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from pyrogram.types import CallbackQuery, Message
-import psutil
-import openai
-import pythonping
-import os
-import time
-import datetime
-import asyncio
-import random
 from functools import lru_cache
+from pyrogram import Client, filters
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
+import pymongo
+import openai
+
+# Importing the coroutine decorator explicitly
+from asyncio import coroutine
+
+# Your existing code continues below...
 
 # Bot API Token
 API_TOKEN = '6506326569:AAH36kYaBAIcuk5pGRTtuDlT7KtkKOilp8o'
