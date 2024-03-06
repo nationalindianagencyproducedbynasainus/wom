@@ -1,33 +1,18 @@
 import pymongo
+imporimport pymongo
 import pyrogram
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from pyrogram.types import CallbackQuery
-from pyrogram.types import Message
-from pyrogram import filters
-from pyrogram.types import Message
-from pyrogram.types import ChatMember
-from pyrogram import *
-import asyncio
+from pyrogram.types import CallbackQuery, Message
 import psutil
-import traceback
-from pyrogram.types import *
-import requests
-import os, time
-from datetime import datetime
-import pytz
-import random
-
-
-
-import os
 import openai
-import uptime
-import datetime
 import pythonping
-import psutil
-import time 
-import speedtest
+import os
+import time
+import datetime
+import asyncio
+import random
+from functools import lru_cache
 
 # Bot API Token
 API_TOKEN = '6506326569:AAH36kYaBAIcuk5pGRTtuDlT7KtkKOilp8o'
