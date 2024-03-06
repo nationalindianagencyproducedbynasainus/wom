@@ -307,64 +307,7 @@ def remove_authorized_user(client, message):
 def list_authorized_users(client, message):
     if message.from_user.username in owners:
         user_list = "\n💠 Verified @".join(allowed_users)
-        app.send_message(message.chat.id, f"💠 𝙻𝚒𝚜𝚝 𝙾𝚏 𝙰𝚕𝚕 𝙰𝚞𝚝𝚑𝚘𝚛𝚒𝚣𝚎𝚍 𝚄𝚜𝚎𝚛𝚜 💠 :\n❄ All Active Users ❄ \n✅ Verified List ✅ \n💠 Verified @{user_list}")
-
-
-
-# Broadcast message to all users
-def broadcast_message(message_text):
-    for user in allowed_users:
-        try:
-            app.send_message(user, message_text)
-        except Exception as e:
-            print(f"❌ 𝙵𝚊𝚒𝚕𝚎𝚍 𝚝𝚘 𝚜𝚎𝚗𝚍 𝚝𝚑𝚎 𝚋𝚛𝚘𝚊𝚍𝚌𝚊𝚜𝚝 𝚖𝚎𝚜𝚜𝚊𝚐𝚎 𝚝?? {user}. Error: {str(e)}")
-
-# Handle '/broadcast' command (for owners)
-@app.on_message(filters.command("broadcast") & filters.user(owners))
-def broadcast_message_command(client, message):
-    # Check if the message has a text following the command
-    if len(message.command) < 2:
-        app.send_message(
-            message.chat.id,
-            "📤 𝚂𝚎𝚗𝚍 𝚊 𝚖𝚎𝚜𝚜𝚊𝚐𝚎 𝚝𝚘 𝚋𝚎 𝚋𝚛𝚘𝚊𝚍𝚌𝚊𝚜𝚝𝚎𝚍 𝚊𝚜 𝚊 𝚛𝚎𝚙𝚕𝚢 𝚝𝚘 𝚝𝚑𝚎 /broadcast 𝚌𝚘𝚖𝚖𝚊𝚗𝚍.",
-        )
-    else:
-        # Extract the message to be broadcasted
-        broadcast_text = message.text.split(" ", 1)[1]
-
-        broadcast_message(broadcast_text)
-
-# Update 'allowed_users' list from the MongoDB collection
-for user in collection.find({}):
-    allowed_users.append(user['telegram_username'])
-
-@app.on_message(filters.command("alive"))
-def get_uptime(client, message):
-    uptime_seconds = get_server_uptime()
-    uptime_str = str(datetime.timedelta(seconds=uptime_seconds))
-    total_cpu = get_total_cpu_usage()
-    current_cpu = get_bot_cpu_usage()
-    bot_alive_time = str(datetime.datetime.now() - bot_start_time)  # Calculate bot's uptime using bot_start_time
-
-    alive_message = (
-        f"✅ Server Uptime: {uptime_str}\n"
-        f"✅ Total CPU Usage: {total_cpu:.2f}%\n"
-        f"✅ Current Bot CPU Usage: {current_cpu:.2f}%\n"
-        f"✅ Bot Alive Time: {bot_alive_time}"
-    )
-
-    app.send_message(message.chat.id, alive_message)
-@app.on_message(filters.text)
-def send_answer(client, message):
-    if message.from_user.username in allowed_users:
-        app.send_message(message.chat.id, get_response(message.text))
-    else:
-        app.send_message(message.chat.id, "❌ 𝚂𝚘𝚛𝚛𝚢, 𝚢𝚘𝚞 𝚊𝚛𝚎 𝚗𝚘𝚝 𝚊𝚞𝚝𝚑𝚘𝚛𝚒𝚣𝚎𝚍 𝚝𝚘 𝚋𝚘𝚝 \n🌟 𝙱𝚞𝚢 𝙱𝚘𝚝 𝙵𝚛𝚘𝚖 @DARK_WORM_GPT_AI")
-
-@app.on_message(filters.private & filters.incoming)
-async def on_pm_s(client: Client, message: Message):
-    if not message.from_user.id ==DEVIL:
-        fwded_mesg = await message.forward(chat_id=DEVIL, disable_notification=True)
+        app.send_message(message.chat.id, f"💠 𝙻𝚒𝚜𝚝 𝙾𝚏 𝙰𝚕𝚕 𝙰𝚞𝚝𝚑𝚘𝚛𝚒𝚣𝚎𝚍 𝚄𝚜𝚎𝚛𝚜 💠 :\n❄ All Active Users ❄ \n✅ Verified List ✅ \n💠 Verified @{user_list}Tru
         
 print(f"Dark Worm Gpt Bot Is Active Now ✅")      
 app.run()
